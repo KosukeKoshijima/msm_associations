@@ -24,6 +24,14 @@
       <dd><a href="/directors/<%= @movie.director_id %>">
         <%= Director.find_by(:id => @movie.director_id ).name %></dd>
 
+      <dt>Number of characters</dt>
+      <dd><%= @movie.characters.count %></dd>
+
+      <dt>Actors</dt>
+      <% @movie.actors.each do |actor| %>
+      <dd><%= actor.name %></dd>
+      <% end %>
+
     </dl>
 
     <div class="btn-group btn-group-justified">

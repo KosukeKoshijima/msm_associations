@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
-
+    @character = Character.new
     render("movies/show.html.erb")
   end
 
@@ -26,7 +26,6 @@ class MoviesController < ApplicationController
     @movie.description = params[:description]
     @movie.image_url = params[:image_url]
     @movie.director_id = params[:director_id]
-    @movie.characters = 
 
     save_status = @movie.save
 
